@@ -109,6 +109,7 @@ const NewPostForm: FunctionComponent<NewPostFormProps> = ({user, communityImageU
       <Flex width='100%'>
         {formTabs.map((item: any) => (
           <TabItem
+            key={item}
             item={item}
             selected={item.title === selectedTab}
             setSelectedTab={setSelectedTab}
