@@ -19,7 +19,7 @@ const Login: FunctionComponent<LoginProps> = () => {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth)
     //firebase logic
     const onSubmit = (event:React.ChangeEvent<HTMLInputElement>)=>{
-        e.preventDefault()
+        event.preventDefault()
         signInWithEmailAndPassword(loginForm.email, loginForm.password)
     }
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
