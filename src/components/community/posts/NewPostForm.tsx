@@ -55,20 +55,21 @@ const NewPostForm: FunctionComponent<NewPostFormProps> = ({user, communityImageU
     title: "",
     body: "",
   });
-  const {selectedFile, setSelectedFile, onSelectedFile} = useSelectFile();
+  const {selectedFile, setSelectedFile, onSelectFile} = useSelectFile();
   const handleCreatePost = async () => {
       const {communityId} = router.query;
     // create new object => type post
     const newPost: Post = {
-        communityId: communityId as string,
-        communityImageURL: communityImageURL || '',
-        creatorId: user.uid,
-        creatorDisplayName: user.email!.split("@")[0],
-        title: textInputs.title,
-        body: textInputs.body,
-        numberOfComments: 0,
-        voteStatus: 0,
-        createdAt: serverTimestamp() as Timestamp,
+      communityId: communityId as string,
+      communityImageURL: communityImageURL || '',
+      creatorId: user.uid,
+      creatorDisplayName: user.email!.split("@")[0],
+      title: textInputs.title,
+      body: textInputs.body,
+      numberOfComments: 0,
+      voteStatus: 0,
+      createdAt: serverTimestamp() as Timestamp,
+      id: ""
     }
     setLoading(true)
    try {
@@ -128,7 +129,7 @@ const NewPostForm: FunctionComponent<NewPostFormProps> = ({user, communityImageU
         {selectedTab === "Images & Video" && (
           <ImageUploads
             selectedFile={selectedFile}
-            onSelectImage={onSelectedFile}
+            onSelectImage={onSelectFile}
             setSelectedTab={setSelectedTab}
             setSelectedFile={setSelectedFile}
           />

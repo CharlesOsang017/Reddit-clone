@@ -1,5 +1,4 @@
 import { authModalState } from "@/atoms/authModalAtom";
-import InputItem from "@/components/layout/InputItem";
 import { auth } from "@/firebase/clientApp";
 import { FIREBASE_ERRORS } from "@/firebase/errors";
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
@@ -32,54 +31,54 @@ const Login: FunctionComponent<LoginProps> = () => {
     }
     return ( 
         <form onSubmit={onSubmit}>
-            <InputItem
-            // required
+            <Input
+            required
             name= 'email'
             placeholder='email'
             type='email'
             mb={2}
             onChange={onChange}
-            // fontSize='10pt'
-            // _placeholder={{color:'gray.500'}}
-            // _hover={{
-            //     bg: 'white',
-            //     border: '1px solid',
-            //     borderColor: 'blue.500',
-            // }}
-            // _focus={{
-            //     outline: 'none',
-            //     bg: 'white',
-            //     border: '1px solid',
-            //     borderColor: 'blue.500',
-            // }}
+            fontSize='10pt'
+            _placeholder={{color:'gray.500'}}
+            _hover={{
+                bg: 'white',
+                border: '1px solid',
+                borderColor: 'blue.500',
+            }}
+            _focus={{
+                outline: 'none',
+                bg: 'white',
+                border: '1px solid',
+                borderColor: 'blue.500',
+            }}
             bg='gray.50'
             />
-            <InputItem
-            // required
+            <Input
+            required
             name='password'
             placeholder='Password'
             type='password'
             mb={2}
             onChange={onChange}
-            // fontSize='10pt'
-            // _placeholder={{color:'gray.500'}}
-            // _hover={{
-            //     bg: 'white',
-            //     border: '1px solid',
-            //     borderColor: 'blue.500',
-            // }}
-            // _focus={{
-            //     outline: 'none',
-            //     bg: 'white',
-            //     border: '1px solid',
-            //     borderColor: 'blue.500',
-            // }}
+            fontSize='10pt'
+            _placeholder={{color:'gray.500'}}
+            _hover={{
+                bg: 'white',
+                border: '1px solid',
+                borderColor: 'blue.500',
+            }}
+            _focus={{
+                outline: 'none',
+                bg: 'white',
+                border: '1px solid',
+                borderColor: 'blue.500',
+            }}
             bg='gray.50'
             />
             <Text textAlign='center' color='red' fontSize='10pt'>
                 {FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}
             </Text>
-            <Button  type='submit' width='100%' height='36px' mt={2} mb={2}  isLoading={loading}>Log In</Button>
+            <Button  width='100%' height='36px' mt={2} mb={2} type='submit' isLoading={loading}>Log In</Button>
             <Flex justifyContent="center" mb={2}>
         <Text fontSize="9pt" mr={1}>
           Forgot your password?
