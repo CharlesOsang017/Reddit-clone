@@ -1,4 +1,5 @@
 import { authModalState } from "@/atoms/authModalAtom";
+import InputItem from "@/components/layout/InputItem";
 import { auth } from "@/firebase/clientApp";
 import { FIREBASE_ERRORS } from "@/firebase/errors";
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
@@ -31,48 +32,48 @@ const Login: FunctionComponent<LoginProps> = () => {
     }
     return ( 
         <form onSubmit={onSubmit}>
-            <Input
-            required
+            <InputItem
+            // required
             name= 'email'
             placeholder='email'
             type='email'
             mb={2}
             onChange={onChange}
-            fontSize='10pt'
-            _placeholder={{color:'gray.500'}}
-            _hover={{
-                bg: 'white',
-                border: '1px solid',
-                borderColor: 'blue.500',
-            }}
-            _focus={{
-                outline: 'none',
-                bg: 'white',
-                border: '1px solid',
-                borderColor: 'blue.500',
-            }}
+            // fontSize='10pt'
+            // _placeholder={{color:'gray.500'}}
+            // _hover={{
+            //     bg: 'white',
+            //     border: '1px solid',
+            //     borderColor: 'blue.500',
+            // }}
+            // _focus={{
+            //     outline: 'none',
+            //     bg: 'white',
+            //     border: '1px solid',
+            //     borderColor: 'blue.500',
+            // }}
             bg='gray.50'
             />
-            <Input
-            required
+            <InputItem
+            // required
             name='password'
             placeholder='Password'
             type='password'
             mb={2}
             onChange={onChange}
-            fontSize='10pt'
-            _placeholder={{color:'gray.500'}}
-            _hover={{
-                bg: 'white',
-                border: '1px solid',
-                borderColor: 'blue.500',
-            }}
-            _focus={{
-                outline: 'none',
-                bg: 'white',
-                border: '1px solid',
-                borderColor: 'blue.500',
-            }}
+            // fontSize='10pt'
+            // _placeholder={{color:'gray.500'}}
+            // _hover={{
+            //     bg: 'white',
+            //     border: '1px solid',
+            //     borderColor: 'blue.500',
+            // }}
+            // _focus={{
+            //     outline: 'none',
+            //     bg: 'white',
+            //     border: '1px solid',
+            //     borderColor: 'blue.500',
+            // }}
             bg='gray.50'
             />
             <Text textAlign='center' color='red' fontSize='10pt'>
