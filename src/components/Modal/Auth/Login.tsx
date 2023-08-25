@@ -18,11 +18,11 @@ const Login: FunctionComponent<LoginProps> = () => {
     })
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth)
     //firebase logic
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
         event.preventDefault()
         signInWithEmailAndPassword(loginForm.email, loginForm.password)
     }
-    const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
+    const onChange = (event: React.FormEvent<HTMLInputElement>) =>{
         //update form state
         setLoginForm((prev) =>({
             ...prev,
@@ -30,7 +30,7 @@ const Login: FunctionComponent<LoginProps> = () => {
         }))
     }
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
             <Input
             required
             name= 'email'
