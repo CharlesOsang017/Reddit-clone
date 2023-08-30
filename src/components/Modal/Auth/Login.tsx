@@ -22,7 +22,7 @@ const Login: FunctionComponent<LoginProps> = () => {
         event.preventDefault()
         signInWithEmailAndPassword(loginForm.email, loginForm.password)
     }
-    const onChange = (event: React.FormEvent<HTMLInputElement>) =>{
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
         //update form state
         setLoginForm((prev) =>({
             ...prev,
